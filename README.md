@@ -31,4 +31,5 @@ Program Manager,"IT, Turin ",943396,https://www.amazon.jobs/en/jobs/943396
 - type ```python scraper.py``` to run it.
 
 **Developers stuff**
+
 This code is [pylint](https://www.pylint.org/) and [mypy](http://mypy-lang.org/) 100% compliant.
