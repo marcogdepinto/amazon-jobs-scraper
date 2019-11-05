@@ -4,7 +4,7 @@
 
 Creating a CSV file of the jobs available at a particular URL of the Amazon.jobs website.
 
-**Disclaimer**: this tool is not endorsed by Amazon in any way and I am not responsible of the usage you will make of it.
+**Disclaimer**: this tool is not endorsed by Amazon in any way and I am not responsible for the usage you will make of it.
 
 # Why I did this?
 I wrote this software while I was searching for a job at Amazon. It can be used to pull all the information from a particular amazon.jobs URL and then elaborate them with Excel or other tools.
