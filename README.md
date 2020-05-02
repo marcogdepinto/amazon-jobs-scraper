@@ -23,11 +23,11 @@ Program Manager,"IT, Turin ",943396,https://www.amazon.jobs/en/jobs/943396
 
 1) ```git clone https://github.com/marcogdepinto/amazon_jobs_scraper.git```;
 2) ```$ pip install -r requirements.txt```;
-3) Install Chrome Webdrivers [here](https://sites.google.com/a/chromium.org/chromedriver/home).
+3) Get an updated version of the Chrome Webdrivers [here](https://sites.google.com/a/chromium.org/chromedriver/home) and replace the one in the ```chromedrivers``` folder. You also need to have Google Chrome installed. 
 
 **How to run it**
 - Open a command prompt and ```cd``` into the directory in which the file is saved;
-- Edit the ```config.py``` inserting the path in which you have installed the chromedrivers on your machine and the url you want to scrape.
+- Edit the ```config.py``` changing the ```URL``` variable with the url you want to scrape.
 - type ```python scraper.py``` to run it.
 
 **Developers stuff**
