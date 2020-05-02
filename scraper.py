@@ -5,13 +5,15 @@ Then, the app will create the job URL for each job found and, finally, will
 save all the info in a CSV file.
 """
 import re
+import sys
 import csv
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from config import URL
-from config import WEBDRIVER_PATH
+from config import WEBDRIVER_PATH_MAC
+from config import WEBDRIVER_PATH_WIN
 
 
 class Scraper:
@@ -28,7 +30,7 @@ class Scraper:
         browser_options.add_argument('--headless')
         browser_options.add_argument('--no-sandbox')
         browser = webdriver.Chrome(executable_path=driver_path,
-                                   chrome_options=browser_options)
+                                   options=browser_options)
         print('Done Creating Browser')
         return browser
 
@@ -83,10 +85,22 @@ class Scraper:
             dict_writer.writerows(lst)
         return 'Csv created!'
 
+    @staticmethod
+    def get_chrome_drivers() -> str:
+        try:
+            if sys.platform.startswith('linux'):
+                driver_path = WEBDRIVER_PATH_MAC
+            elif sys.platform.startswith('win'):
+                driver_path = WEBDRIVER_PATH_WIN
+        except ValueError as e:
+            print("OS not supported caused error: ", e)
+
+        return driver_path
+
 
 if __name__ == '__main__':
     print('Scraping started')
-    BROWSER = Scraper.create_browser(driver_path=WEBDRIVER_PATH)
+    BROWSER = Scraper.create_browser(driver_path=Scraper.get_chrome_drivers())
     BROWSER.get(url=URL)
     PAGE_HTML = BROWSER.page_source
     SOUP = BeautifulSoup(PAGE_HTML, features="html.parser")
