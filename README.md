@@ -23,7 +23,8 @@ Program Manager,"IT, Turin ",943396,https://www.amazon.jobs/en/jobs/943396
 
 1) ```git clone https://github.com/marcogdepinto/amazon_jobs_scraper.git```;
 2) ```$ pip install -r requirements.txt```;
-3) Get an updated version of the Chrome Webdrivers [here](https://sites.google.com/a/chromium.org/chromedriver/home) and replace the one in the ```chromedrivers``` folder. You also need to have Google Chrome installed. 
+3) (**Windows users only**) Get an updated version of the Chrome Webdrivers [here](https://sites.google.com/a/chromium.org/chromedriver/home) and replace the one in the ```chromedrivers``` folder. You also need to have Google Chrome installed. 
+4) (**MacOS users only**) Ensure the ```WEBDRIVER_PATH_MAC``` variable in the ```config.py``` file contains the correct path to your Chrome Webdrivers.
 
 **How to run it**
 - Open a command prompt and ```cd``` into the directory in which the file is saved;
