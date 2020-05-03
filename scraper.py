@@ -87,14 +87,12 @@ class Scraper:
 
     @staticmethod
     def get_chrome_drivers() -> str:
-        try:
-            if sys.platform.startswith('linux'):
-                driver_path = WEBDRIVER_PATH_MAC
-            elif sys.platform.startswith('win'):
-                driver_path = WEBDRIVER_PATH_WIN
-        except ValueError as e:
-            print("OS not supported caused error: ", e)
-
+        if sys.platform.startswith('linux'):
+            driver_path = WEBDRIVER_PATH_MAC
+        elif sys.platform.startswith('win'):
+            driver_path = WEBDRIVER_PATH_WIN
+        else:
+            driver_path = "OS not supported."
         return driver_path
 
 
